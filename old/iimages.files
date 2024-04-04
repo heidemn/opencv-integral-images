@@ -1,0 +1,9 @@
+iimages.pro
+lena_eye.pgm
+lena_face.pgm
+lena_std.pgm
+main.cpp
+main.o
+Screenshot.pgm
+ifeatures.h
+ifeatures.cpp

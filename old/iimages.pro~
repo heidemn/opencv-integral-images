@@ -1,0 +1,30 @@
+CONFIG += config_iimages config_ilearn
+
+config_iimages {
+	QMAKE_CXXFLAGS += -Wall
+
+	SOURCES += \
+		main.cpp ifeatures.cpp
+
+
+	CONFIG+=link_pkgconfig
+
+	PKGCONFIG += opencv
+
+	INCLUDEPATH += /usr/include/opencv/
+}
+
+
+config_ilearn {
+	QMAKE_CXXFLAGS += -Wall
+
+	SOURCES += \
+		ilearn.cpp ifeatures.cpp
+
+	CONFIG+=link_pkgconfig
+
+	PKGCONFIG += opencv
+
+	INCLUDEPATH += /usr/include/opencv/
+}
+

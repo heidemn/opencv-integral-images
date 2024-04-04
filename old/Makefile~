@@ -1,0 +1,22 @@
+LIBS = $(shell pkg-config --libs opencv)
+CXX = g++
+CXXFLAGS = -Wall
+
+TARGETS = iimages ilearn
+
+all: $(TARGETS)
+
+iimages: main.o ifeatures.o 
+	$(LINK) $(LFLAGS) $(LIBS) -o $@ $< 
+
+ilearn: ilearn.o ifeatures.o
+	$(LINK) $(LFLAGS) $(LIBS) -o $@ $< 
+
+clean:
+	rm *.o $(TARGETS)
+
+.SUFFIXES: .o .c .cpp .cc .cxx .C
+
+.cpp.o:
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o "$@" "$<"
+
