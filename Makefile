@@ -1,6 +1,7 @@
 all: Release/iimages
 
 # Not needed apparently: -lopencv_imgproc -lopencv_video
+# https://stackoverflow.com/a/55086637 -> "-Wl,--copy-dt-needed-entries"
 Release/iimages: ifeatures.cpp ifeatures.h main.cpp
 	g++ -o Release/iimages \
 		ifeatures.cpp main.cpp \
